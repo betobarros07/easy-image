@@ -11,6 +11,45 @@ namespace EasyImage.Net45
     public static class ImageExtensions
     {
         /// <summary>
+        /// Crop an image.
+        /// <para/>The new width and height of image will be:
+        /// Width = image.Width - x * 2;
+        /// Height = image.Height - y * 2;
+        /// </summary>
+        /// <example>
+        /// How to use Crop function:
+        /// <code>
+        /// var image = Image.FromFile("C:\\images\\bar.jpg");
+        /// image.Crop(100, 30);
+        /// </code>
+        /// </example>
+        /// <see cref="Image.FromFile(string)"/>
+        /// <param name="image">The image to be cropped.</param>
+        /// <param name="x">The coordinate x in pixels (width spacing).</param>
+        /// <param name="y">The coordinate y in pixels (height spacing).</param>
+        /// <returns>The new cropped image.</returns>
+        public static Bitmap Crop(this Image image, int x, int y)
+        {
+            var width = image.Width - x * 2;
+            var height = image.Height - y * 2;
+            var bitmap = new Bitmap(width, height);
+            var horizontalResolution = image.HorizontalResolution;
+            var verticalResolution = image.VerticalResolution;
+            bitmap.SetResolution(horizontalResolution, verticalResolution);
+            using (var graphics = Graphics.FromImage(bitmap))
+            {
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                var rectangle = new Rectangle(0, 0, width, height);
+                graphics.DrawImage(image, rectangle, x, y, width, height, GraphicsUnit.Pixel);
+            }
+            return bitmap;
+        }
+
+        /// <summary>
         /// Resize the image based on height.
         /// <para/>Keeps width proportional.
         /// </summary>
@@ -28,6 +67,7 @@ namespace EasyImage.Net45
         /// <returns>The new resized image.</returns>
         public static Bitmap HeightResize(this Image image, int height)
         {
+
             var width = (height * image.Width) / image.Height;
             return image.Resize(width, height);
         }
