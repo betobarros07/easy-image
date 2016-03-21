@@ -39,7 +39,7 @@ namespace ImageCrop.Net45
         /// How to use Resize function:
         /// <code>
         /// var image = Image.FromFile("C:\\images\\foo-bar.jpg");
-        /// image.HeightResize(400, 500);
+        /// image.Resize(400, 500);
         /// </code>
         /// </example>
         /// <see cref="Image.FromFile(string)"/>

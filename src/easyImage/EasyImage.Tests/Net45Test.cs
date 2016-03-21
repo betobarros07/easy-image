@@ -1,8 +1,6 @@
 ﻿using FluentAssertions;
 using System;
 using System.Drawing;
-using System.Text;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using System.Reflection;
@@ -41,6 +39,11 @@ namespace ImageCrop.Tests
             return Image.FromFile(path);
         }
 
+        /// <summary>
+        /// Save image to results folder.
+        /// </summary>
+        /// <param name="image">Image to be saved.</param>
+        /// <returns>Path to the saved image.</returns>
         private string Save(Image image)
         {
             var fileName = Guid.NewGuid().ToString() + ".jpg";
@@ -49,6 +52,9 @@ namespace ImageCrop.Tests
             return pathTo;
         }
 
+        /// <summary>
+        /// Do a simple resize.
+        /// </summary>
         [TestMethod]
         public void DoResize()
         {
@@ -60,6 +66,9 @@ namespace ImageCrop.Tests
             resizedImage.Height.Should().Be(450, "Is the height for the resized image.");
         }
 
+        /// <summary>
+        /// Do a simple width resize.
+        /// </summary>
         [TestMethod]
         public void DoWidthResize()
         {
@@ -73,6 +82,9 @@ namespace ImageCrop.Tests
             resizedImage.Height.Should().Be(498, "Is the height for the resized image.");
         }
 
+        /// <summary>
+        /// Do a simple Height resize.
+        /// </summary>
         [TestMethod]
         public void DoHeightResize()
         {
@@ -80,7 +92,7 @@ namespace ImageCrop.Tests
             var resize = image.HeightResize(499);
             var path = Save(resize);
             var resizedImage = Image.FromFile(path);
-            // New heigth is:
+            // New width is:
             // (1024 * 499) / 768 = 665
             resizedImage.Width.Should().Be(665, "Is the width for the resized image.");
             resizedImage.Height.Should().Be(499, "Is the height for the resized image.");
