@@ -15,7 +15,7 @@ namespace ImageCrop.Net45
         private const int CROP_WIDTH = 500;
         private const int CROP_HEIGHT = 200;
 
-        public static Bitmap Resize(this Image image, int x, int y, int width, int height)
+        public static Bitmap Resize(this Image image, int width, int height)
         {
             var bitmap = new Bitmap(width, height);
             var horizontalResolution = image.HorizontalResolution;
