@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using System.Reflection;
 
-namespace ImageCrop.Tests
+namespace EasyImage.Tests
 {
     using Net45;
 
