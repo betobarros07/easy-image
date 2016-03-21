@@ -20,8 +20,7 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
-[Rr]esizes/
-[Cc]rops/
+[Rr]esults/
 
 # Visual Studio 2015 cache/options directory
 .vs/
