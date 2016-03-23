@@ -13,6 +13,47 @@ namespace EasyImage.Net45
         /// <summary>
         /// Crop an image.
         /// <para/>The new width and height of image will be:
+        /// Width = image.Width - (x1 + x2);
+        /// Height = image.Height - (y1 + y2);
+        /// </summary>
+        /// <example>
+        /// How to use Crop function:
+        /// <code>
+        /// var image = Image.FromFile("C:\\images\\bar.jpg");
+        /// image.Crop(100, 90, 30, 20);
+        /// </code>
+        /// </example>
+        /// <see cref="Image.FromFile(string)"/>
+        /// <param name="image">The image to be cropped.</param>
+        /// <param name="x1">The left coordinate x in pixels (width spacing).</param>
+        /// <param name="x2">The right coordinate x in pixels (width spacing).</param>
+        /// <param name="y1">The left coordinate y in pixels (height spacing).</param>
+        /// <param name="y2">The right coordinate y in pixels (height spacing).</param>
+        /// <returns>The new cropped image.</returns>
+        public static Bitmap Crop(this Image image, int x1, int x2, int y1, int y2)
+        {
+            var width = image.Width - (x1 + x2);
+            var height = image.Height - (y1 + y2);
+            var bitmap = new Bitmap(width, height);
+            var horizontalResolution = image.HorizontalResolution;
+            var verticalResolution = image.VerticalResolution;
+            bitmap.SetResolution(horizontalResolution, verticalResolution);
+            using (var graphics = Graphics.FromImage(bitmap))
+            {
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                var rectangle = new Rectangle(0, 0, width, height);
+                graphics.DrawImage(image, rectangle, x1, y1, width, height, GraphicsUnit.Pixel);
+            }
+            return bitmap;
+        }
+
+        /// <summary>
+        /// Crop an image.
+        /// <para/>The new width and height of image will be:
         /// Width = image.Width - x * 2;
         /// Height = image.Height - y * 2;
         /// </summary>
@@ -30,23 +71,7 @@ namespace EasyImage.Net45
         /// <returns>The new cropped image.</returns>
         public static Bitmap Crop(this Image image, int x, int y)
         {
-            var width = image.Width - x * 2;
-            var height = image.Height - y * 2;
-            var bitmap = new Bitmap(width, height);
-            var horizontalResolution = image.HorizontalResolution;
-            var verticalResolution = image.VerticalResolution;
-            bitmap.SetResolution(horizontalResolution, verticalResolution);
-            using (var graphics = Graphics.FromImage(bitmap))
-            {
-                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                graphics.SmoothingMode = SmoothingMode.HighQuality;
-                graphics.CompositingMode = CompositingMode.SourceCopy;
-                graphics.CompositingQuality = CompositingQuality.HighQuality;
-                var rectangle = new Rectangle(0, 0, width, height);
-                graphics.DrawImage(image, rectangle, x, y, width, height, GraphicsUnit.Pixel);
-            }
-            return bitmap;
+            return image.Crop(x, x, y, y);
         }
 
         /// <summary>
