@@ -1,2 +1,8 @@
 language: csharp
 solution: ./src/easyImage/EasyImage.sln
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
+  - nuget restore ./src/easyImage/EasyImage.sln
+after_script:
+  - nunit-console ./src/easyImage/EasyImage.Tests/bin/Release/EasyImage.Tests.dll
