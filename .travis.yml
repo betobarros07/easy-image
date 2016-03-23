@@ -1,9 +1,9 @@
 language: csharp
 script:
-  - xbuild /p:Configuration=Debug solution-name.sln
+  - xbuild /p:Configuration=Debug src/EasyImage/EasyImage.sln
 before_install:
   - sudo apt-get install nunit-console
 before_script:
-  - nuget restore solution-name.sln
+  - nuget restore src/EasyImage/EasyImage.sln
 after_script:
-  - nunit-console Tests/bin/Debug/Tests.dll
+  - nunit-console src/EasyImage/EasyImage.Tests/bin/Debug/EasyImage.Tests.dll
