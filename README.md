@@ -8,10 +8,49 @@ All functions are a extension of Image class.
 
 ## Crop
 
-The Crop function will cut a piece of an image and resize it. The crop is based in two coordinates(x and y):
+The Crop function will cut a piece of an image and resize it. The crop is based in four coordinates(x1, x2 and y1, y2):
 
-* X - Is the quantity of pixels that the image will be cutted from left and right, for example, if you crop an image with 500px of width and you set x to 100px your new image width is 400px.
-* Y - Is the quantity of pixels that the image will be cutted from Top and Bottom, for example, if you crop an image with 700px of height and you set y to 75px your new image height is 550px.
+* `X` - Is the quantity of pixels that the image will be cutted from left and right, for example.
+* `Y` - Is the quantity of pixels that the image will be cutted from top and bottom.
+
+So, width is equal to width - (x1 + x2) and height is equal to height - (y1 + y2).
+
+### Parameters
+
+* `x1:` x1 coordinate(left) in pixels.
+* `x2:` x2 coordinate(right) in pixels.
+* `y1:` y1 coordinate(top) in pixels.
+* `y2:` y2 coordinate(bottom) in pixels.
+
+### Example
+
+```c#
+using EasyImage.Net45;
+using System.Drawing;
+
+namespace Foo
+{
+    public class Bar
+    {
+        public void Main(string[] args)
+        {
+            var image = Image.FromFile("C:\\foo-bar.jpg");
+            image.Crop(100, 150, 75, 50);
+        }
+    }
+}
+```
+
+## Simple Crop
+
+The Simple Crop function is a method overloading of Crop function, basically the x will be the x1 and x2 and the same thing to y, like the following code.
+
+```c#
+public static Bitmap Crop(this Image image, int x, int y)
+{
+    return image.Crop(x, x, y, y);
+}
+```
 
 So, width is equal to width - x * 2 and height is equal to height - y * 2.
 
