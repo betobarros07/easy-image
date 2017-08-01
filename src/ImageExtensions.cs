@@ -2,7 +2,7 @@
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 
-namespace EasyImage.Net45
+namespace EasyImage
 {
     /// <summary>
     /// Image extensions class for .Net Framework 4.5.

@@ -1,8 +1,12 @@
 language: csharp
-solution: ./src/easyImage/EasyImage.sln
-before_install:
-  - sudo apt-get install nunit-console
+solution: EasyImage.sln
+mono: none
+dotnet: 1.0.1
+dist: trusty
+branches:
+  only:
+    - master
 before_script:
-  - nuget restore ./src/easyImage/EasyImage.sln
-after_script:
-  - nunit-console ./src/easyImage/EasyImage.Tests/bin/Release/EasyImage.Tests.dll
+  - dotnet restore
+script:
+  - dotnet build

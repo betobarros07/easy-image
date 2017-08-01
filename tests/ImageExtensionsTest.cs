@@ -1,25 +1,16 @@
-﻿using FluentAssertions;
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-//using TestCleanup = NUnit.Framework.TearDownAttribute;
-//using TestInitialize = NUnit.Framework.SetUpAttribute;
-//using ClassCleanup = NUnit.Framework.TestFixtureTearDownAttribute;
-//using ClassInitialize = NUnit.Framework.TestFixtureSetUpAttribute;
+using FluentAssertions;
 using System;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
+using Xunit;
 
 namespace EasyImage.Tests
 {
-    // Reference of Library EasyImage.Net45
-    using Net45;
-
     /// <summary>
-    /// Test class for ImageExtensions used in .Net Framework 4.5
+    /// Test class for ImageExtensions
     /// </summary>
-    [TestClass]
-    public class Net45Test
+    public class ImageExtensionsTest
     {
         /// <summary>
         /// Absolute path to get the images.
@@ -29,9 +20,12 @@ namespace EasyImage.Tests
         /// <summary>
         /// Initialize _absolutePath.
         /// </summary>
-        public Net45Test()
+        public ImageExtensionsTest()
         {
-            _absolutePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location).Replace("bin\\Debug", "");
+            var rootPath = Path.GetDirectoryName(typeof(ImageExtensionsTest).GetTypeInfo().Assembly.FullName);
+            var absolutePath = Path.Combine(rootPath, "easy_image_tests");
+            Directory.CreateDirectory(absolutePath);
+            _absolutePath = absolutePath;
         }
 
         /// <summary>
@@ -41,7 +35,7 @@ namespace EasyImage.Tests
         /// <returns>Image from Images directory</returns>
         private Image GetImage(string imageName)
         {
-            var path = Path.Combine(_absolutePath, "Images\\" + imageName);
+            var path = Path.Combine(_absolutePath, "Images", imageName);
             return Image.FromFile(path);
         }
 
@@ -53,7 +47,7 @@ namespace EasyImage.Tests
         private string Save(Image image)
         {
             var fileName = Guid.NewGuid().ToString() + ".jpg";
-            var pathTo = Path.Combine(_absolutePath, "Images\\Results\\", fileName);
+            var pathTo = Path.Combine(_absolutePath, "Images", "Results", fileName);
             image.Save(pathTo);
             return pathTo;
         }
@@ -61,7 +55,7 @@ namespace EasyImage.Tests
         /// <summary>
         /// Do a complex Crop.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public void DoComplexCrop()
         {
             var image = GetImage("penguins.jpg");
@@ -78,7 +72,7 @@ namespace EasyImage.Tests
         /// <summary>
         /// Do a simple Height resize.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public void DoHeightResize()
         {
             var image = GetImage("desert.jpg");
@@ -94,7 +88,7 @@ namespace EasyImage.Tests
         /// <summary>
         /// Do a simple resize.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public void DoResize()
         {
             var image = GetImage("tulips.jpg");
@@ -108,7 +102,7 @@ namespace EasyImage.Tests
         /// <summary>
         /// Do a simple Crop.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public void DoSimpleCrop()
         {
             var image = GetImage("hydrangeas.jpg");
@@ -125,7 +119,7 @@ namespace EasyImage.Tests
         /// <summary>
         /// Do a simple width resize.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public void DoWidthResize()
         {
             var image = GetImage("koala.jpg");
