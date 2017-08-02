@@ -1,8 +1,6 @@
 using FluentAssertions;
-using System;
 using System.Drawing;
 using System.IO;
-using System.Reflection;
 using Xunit;
 
 namespace EasyImage.Tests
@@ -22,10 +20,8 @@ namespace EasyImage.Tests
         /// </summary>
         public ImageExtensionsTest()
         {
-            var rootPath = Path.GetDirectoryName(typeof(ImageExtensionsTest).GetTypeInfo().Assembly.FullName);
-            var absolutePath = Path.Combine(rootPath, "easy_image_tests");
-            Directory.CreateDirectory(absolutePath);
-            _absolutePath = absolutePath;
+            // Used to back to default folder
+            _absolutePath = Path.GetFullPath("../../..");
         }
 
         /// <summary>
@@ -40,28 +36,13 @@ namespace EasyImage.Tests
         }
 
         /// <summary>
-        /// Save image to results folder.
-        /// </summary>
-        /// <param name="image">Image to be saved.</param>
-        /// <returns>Path to the saved image.</returns>
-        private string Save(Image image)
-        {
-            var fileName = Guid.NewGuid().ToString() + ".jpg";
-            var pathTo = Path.Combine(_absolutePath, "Images", "Results", fileName);
-            image.Save(pathTo);
-            return pathTo;
-        }
-
-        /// <summary>
         /// Do a complex Crop.
         /// </summary>
         [Fact]
         public void DoComplexCrop()
         {
             var image = GetImage("penguins.jpg");
-            var crop = image.Crop(70, 130, 150, 50);
-            var path = Save(crop);
-            var croppedImage = Image.FromFile(path);
+            var croppedImage = image.Crop(70, 130, 150, 50);
             // New size is:
             // 1024 - (70 + 30) = 824 width
             // 768 - (50 + 150) = 568 height
@@ -76,9 +57,7 @@ namespace EasyImage.Tests
         public void DoHeightResize()
         {
             var image = GetImage("desert.jpg");
-            var resize = image.HeightResize(499);
-            var path = Save(resize);
-            var resizedImage = Image.FromFile(path);
+            var resizedImage = image.HeightResize(499);
             // New width is:
             // (1024 * 499) / 768 = 665
             resizedImage.Width.Should().Be(665, "Is the width for the resized image.");
@@ -92,9 +71,7 @@ namespace EasyImage.Tests
         public void DoResize()
         {
             var image = GetImage("tulips.jpg");
-            var resize = image.Resize(800, 450);
-            var path = Save(resize);
-            var resizedImage = Image.FromFile(path);
+            var resizedImage = image.Resize(800, 450);
             resizedImage.Width.Should().Be(800, "Is the width for the resized image.");
             resizedImage.Height.Should().Be(450, "Is the height for the resized image.");
         }
@@ -106,9 +83,7 @@ namespace EasyImage.Tests
         public void DoSimpleCrop()
         {
             var image = GetImage("hydrangeas.jpg");
-            var crop = image.Crop(120, 50);
-            var path = Save(crop);
-            var croppedImage = Image.FromFile(path);
+            var croppedImage = image.Crop(120, 50);
             // New size is:
             // 1024 - 120 * 2 = 784 width
             // 768 - 50 * 2 = 668 height
@@ -123,9 +98,7 @@ namespace EasyImage.Tests
         public void DoWidthResize()
         {
             var image = GetImage("koala.jpg");
-            var resize = image.WidthResize(665);
-            var path = Save(resize);
-            var resizedImage = Image.FromFile(path);
+            var resizedImage = image.WidthResize(665);
             // New heigth is:
             // (768 * 665) / 1024 = 498
             resizedImage.Width.Should().Be(665, "Is the width for the resized image.");
