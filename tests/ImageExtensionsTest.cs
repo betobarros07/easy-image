@@ -41,7 +41,7 @@ namespace EasyImage.Tests
         [Fact]
         public void DoComplexCrop()
         {
-            var image = GetImage("penguins.jpg");
+            var image = GetImage("Penguins.jpg");
             var croppedImage = image.Crop(70, 130, 150, 50);
             // New size is:
             // 1024 - (70 + 30) = 824 width
@@ -56,7 +56,7 @@ namespace EasyImage.Tests
         [Fact]
         public void DoHeightResize()
         {
-            var image = GetImage("desert.jpg");
+            var image = GetImage("Desert.jpg");
             var resizedImage = image.HeightResize(499);
             // New width is:
             // (1024 * 499) / 768 = 665
@@ -70,7 +70,7 @@ namespace EasyImage.Tests
         [Fact]
         public void DoResize()
         {
-            var image = GetImage("tulips.jpg");
+            var image = GetImage("Tulips.jpg");
             var resizedImage = image.Resize(800, 450);
             resizedImage.Width.Should().Be(800, "Is the width for the resized image.");
             resizedImage.Height.Should().Be(450, "Is the height for the resized image.");
@@ -82,7 +82,7 @@ namespace EasyImage.Tests
         [Fact]
         public void DoSimpleCrop()
         {
-            var image = GetImage("hydrangeas.jpg");
+            var image = GetImage("Hydrangeas.jpg");
             var croppedImage = image.Crop(120, 50);
             // New size is:
             // 1024 - 120 * 2 = 784 width
@@ -97,7 +97,7 @@ namespace EasyImage.Tests
         [Fact]
         public void DoWidthResize()
         {
-            var image = GetImage("koala.jpg");
+            var image = GetImage("Koala.jpg");
             var resizedImage = image.WidthResize(665);
             // New heigth is:
             // (768 * 665) / 1024 = 498
