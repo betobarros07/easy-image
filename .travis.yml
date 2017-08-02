@@ -9,4 +9,5 @@ branches:
 before_script:
   - dotnet restore
 script:
+  - dotnet test tests/EasyImage.Tests.csproj
   - dotnet build
