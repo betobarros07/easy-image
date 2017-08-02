@@ -1,6 +1,6 @@
 # Easy Image
 
-[![Build](https://travis-ci.org/BetoBarros07/easyImage.svg)](BUILD)
+[![Build](https://travis-ci.org/BetoBarros07/easy_image.svg)](https://travis-ci.org/BetoBarros07/easy_image)
 [![MIT License](https://img.shields.io/badge/license-mit-blue.svg)](LICENSE)
 
 Easy Image is a library that provides, basically, functions to resize and crop images.
