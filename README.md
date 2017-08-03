@@ -3,7 +3,7 @@
 [![Build](https://travis-ci.org/BetoBarros07/easy_image.svg)](https://travis-ci.org/BetoBarros07/easy_image)
 [![Nuget Version](http://img.shields.io/nuget/v/EasyImage.svg)](http://www.nuget.org/packages/EasyImage)
 [![Issues open](https://img.shields.io/github/issues/betobarros07/easyimage.svg)](https://github.com/BetoBarros07/easy_image/issues)
-[![Unlicense](https://img.shields.io/badge/license-unlicense-blue.svg)](LICENSE)
+[![Unlicense](https://img.shields.io/badge/license-unlicense-orange.svg)](LICENSE)
 
 Easy Image is a library that provides, basically, functions to resize and crop images.
 
