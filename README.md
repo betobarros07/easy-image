@@ -1,7 +1,7 @@
 # Easy Image
 
 [![Build](https://travis-ci.org/BetoBarros07/easy_image.svg)](https://travis-ci.org/BetoBarros07/easy_image)
-[![Nuget Version](http://www.nuget.org/packages/EasyImage.svg)](http://www.nuget.org/packages/EasyImage)
+[![Nuget Version](http://img.shields.io/nuget/v/EasyImage.svg)](http://www.nuget.org/packages/EasyImage)
 [![Issues open](https://img.shields.io/github/issues/betobarros07/easyimage.svg)](https://github.com/BetoBarros07/easy_image/issues)
 [![Unlicense](https://img.shields.io/badge/license-unlicense-blue.svg)](LICENSE)
 
