@@ -5,25 +5,18 @@ using System.Drawing.Imaging;
 namespace EasyImage
 {
     /// <summary>
-    /// Image extensions class for .Net Framework 4.5.
-    /// <para/>Here you have all the resize and crop functions for Image class, Have fun!.
+    /// Image extensions class for .Net Framework 4.5. Here you have all the resize and crop functions for Image class, Have fun!.
     /// </summary>
     public static class ImageExtensions
     {
         /// <summary>
-        /// Crop an image.
-        /// <para/>The new width and height of image will be:
-        /// Width = image.Width - (x1 + x2);
-        /// Height = image.Height - (y1 + y2);
-        /// </summary>
-        /// <example>
-        /// How to use Crop function:
+        /// Crop an image. The new width and height of image will be: Width = image.Width - (x1 + x2), Height = image.Height - (y1 + y2).
         /// <code>
-        /// var image = Image.FromFile("C:\\images\\bar.jpg");
-        /// image.Crop(100, 90, 30, 20);
+        /// <para>How to use Crop function:</para>
+        /// <para>var image = Image.FromFile("C:\\images\\bar.jpg");</para>
+        /// <para>image.Crop(100, 90, 30, 20);</para>
         /// </code>
-        /// </example>
-        /// <see cref="Image.FromFile(string)"/>
+        /// </summary>
         /// <param name="image">The image to be cropped.</param>
         /// <param name="x1">The left coordinate x in pixels (width spacing).</param>
         /// <param name="x2">The right coordinate x in pixels (width spacing).</param>
@@ -52,19 +45,13 @@ namespace EasyImage
         }
 
         /// <summary>
-        /// Crop an image.
-        /// <para/>The new width and height of image will be:
-        /// Width = image.Width - x * 2;
-        /// Height = image.Height - y * 2;
-        /// </summary>
-        /// <example>
-        /// How to use Crop function:
+        /// Crop an image. The new width and height of image will be: Width = image.Width - x * 2, Height = image.Height - y * 2.
         /// <code>
-        /// var image = Image.FromFile("C:\\images\\bar.jpg");
-        /// image.Crop(100, 30);
+        /// <para>How to use Crop function:</para>
+        /// <para>var image = Image.FromFile("C:\\images\\bar.jpg");</para>
+        /// <para>image.Crop(100, 30);</para>
         /// </code>
-        /// </example>
-        /// <see cref="Image.FromFile(string)"/>
+        /// </summary>
         /// <param name="image">The image to be cropped.</param>
         /// <param name="x">The coordinate x in pixels (width spacing).</param>
         /// <param name="y">The coordinate y in pixels (height spacing).</param>
@@ -75,18 +62,13 @@ namespace EasyImage
         }
 
         /// <summary>
-        /// Resize the image based on height.
-        /// <para/>Keeps width proportional.
-        /// </summary>
-        /// <example>
-        /// How to use HeightResize function:
+        /// Resize the image based on height. Keeps width proportional.
         /// <code>
-        /// var image = Image.FromFile("C:\\images\\bar.jpg");
-        /// image.HeightResize(500);
+        /// <para>How to use HeightResize function:</para>
+        /// <para>var image = Image.FromFile("C:\\images\\bar.jpg");</para>
+        /// <para>image.HeightResize(500);</para>
         /// </code>
-        /// </example>
-        /// <see cref="Image.FromFile(string)"/>
-        /// <seealso cref="Resize(Image, int, int)"/>
+        /// </summary>
         /// <param name="image">The image to be resized.</param>
         /// <param name="height">The new height of image.</param>
         /// <returns>The new resized image.</returns>
@@ -99,15 +81,12 @@ namespace EasyImage
 
         /// <summary>
         /// Resize the image.
-        /// </summary>
-        /// <example>
-        /// How to use Resize function:
         /// <code>
-        /// var image = Image.FromFile("C:\\images\\foo-bar.jpg");
-        /// image.Resize(400, 500);
+        /// <para>How to use Resize function:</para>
+        /// <para>var image = Image.FromFile("C:\\images\\foo-bar.jpg");</para>
+        /// <para>image.Resize(400, 500);</para>
         /// </code>
-        /// </example>
-        /// <see cref="Image.FromFile(string)"/>
+        /// </summary>
         /// <param name="image">The image to be resized.</param>
         /// <param name="width">The new width of image.</param>
         /// <param name="height">The new height of image.</param>
@@ -139,18 +118,13 @@ namespace EasyImage
         }
 
         /// <summary>
-        /// Resize the image based on width.
-        /// <para/>Keeps height proportional.
-        /// </summary>
-        /// <example>
-        /// How to use WidthResize function:
+        /// Resize the image based on width. Keeps height proportional.
         /// <code>
-        /// var image = Image.FromFile("C:\\images\\foo.jpg");
-        /// image.WidthResize(400);
+        /// <para>How to use WidthResize function:</para>
+        /// <para>var image = Image.FromFile("C:\\images\\foo.jpg");</para>
+        /// <para>image.WidthResize(400);</para>
         /// </code>
-        /// </example>
-        /// <see cref="Image.FromFile(string)"/>
-        /// <seealso cref="Resize(Image, int, int)"/>
+        /// </summary>
         /// <param name="image">The image to be resized.</param>
         /// <param name="width">The new width of image.</param>
         /// <returns>The new resized image.</returns>
