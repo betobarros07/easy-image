@@ -35,7 +35,7 @@ namespace Foo
 {
     public class Bar
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
             var image = Image.FromFile("C:\\foo-bar.jpg");
             image.Crop(100, 150, 75, 50);
@@ -72,7 +72,7 @@ namespace Foo
 {
     public class Bar
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
             var image = Image.FromFile("C:\\foo-bar.jpg");
             image.Crop(100, 75);
@@ -100,7 +100,7 @@ namespace Foo
 {
     public class Bar
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
             var image = Image.FromFile("C:\\foo-bar.jpg");
             image.Resize(750, 350);
@@ -131,7 +131,7 @@ namespace Foo
 {
     public class Bar
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
             var image = Image.FromFile("C:\\foo-bar.jpg");
             image.HeightResize(350);
@@ -162,7 +162,7 @@ namespace Foo
 {
     public class Bar
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
             var image = Image.FromFile("C:\\foo-bar.jpg");
             image.WidthResize(350);
@@ -188,7 +188,7 @@ namespace Foo
 {
     public class Bar
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
             var image = Image.FromFile("C:\\foo-bar.jpg");
             image.Resize(350, 200);
