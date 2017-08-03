@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.5</TargetFramework>
     <PackageId>EasyImage</PackageId>
-    <PackageVersion>2.0.0</PackageVersion>
+    <PackageVersion>2.0.1</PackageVersion>
     <Authors>betobarros07</Authors>
     <Description>Easy Image is a library that provides, basically, functions to resize and crop images.You will have 4 functions, Crop, Resize, HeightResize and WidthResize.All functions are a extension of Image class.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
