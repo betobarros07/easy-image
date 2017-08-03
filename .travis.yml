@@ -9,5 +9,8 @@ branches:
 before_script:
   - dotnet restore
 script:
-  - dotnet build
-  - dotnet test tests/EasyImage.Tests.csproj
+  - dotnet build -c Release
+  - dotnet test -c Release tests/EasyImage.Tests.csproj
+after_script:
+  - dotnet pack -c Release src/EasyImage.csproj
+  - dotnet nuget push src/bin/Release/*.nupkg -k $NUGET_API_KEY
