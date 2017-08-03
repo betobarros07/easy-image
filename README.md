@@ -202,4 +202,4 @@ namespace Foo
 
 ## License
 
-[MIT](https://opensource.org/licenses/MIT) © [Beto Barros](https://github.com/betobarros07)
+[UNLICENSE](LICENSE) © [Beto Barros](https://github.com/betobarros07)
