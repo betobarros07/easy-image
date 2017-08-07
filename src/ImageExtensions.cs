@@ -2,7 +2,7 @@
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 
-namespace EasyImage
+namespace O7.EasyImage
 {
     /// <summary>
     /// Image extensions class for .Net Framework 4.5. Here you have all the resize and crop functions for Image class, Have fun!.

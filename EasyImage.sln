@@ -2,9 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyImage", "src\EasyImage.csproj", "{9DA4D3B5-072A-40EA-A1E5-232D0A53DD43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyImage", "src\O7.EasyImage.csproj", "{9DA4D3B5-072A-40EA-A1E5-232D0A53DD43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyImage.Tests", "tests\EasyImage.Tests.csproj", "{D623CE61-9DDD-4BA4-AAC6-888C62660D5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyImage.Tests", "tests\O7.EasyImage.Tests.csproj", "{D623CE61-9DDD-4BA4-AAC6-888C62660D5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

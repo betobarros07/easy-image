@@ -3,7 +3,7 @@ using System.Drawing;
 using System.IO;
 using Xunit;
 
-namespace EasyImage.Tests
+namespace O7.EasyImage.Tests
 {
     /// <summary>
     /// Test class for ImageExtensions
