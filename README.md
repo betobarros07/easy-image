@@ -30,7 +30,7 @@ So, width is equal to width - (x1 + x2) and height is equal to height - (y1 + y2
 ### Example
 
 ```c#
-using EasyImage;
+using O7.EasyImage;
 using System.Drawing;
 
 namespace Foo
@@ -67,7 +67,7 @@ So, width is equal to width - x * 2 and height is equal to height - y * 2.
 ### Example
 
 ```c#
-using EasyImage;
+using O7.EasyImage;
 using System.Drawing;
 
 namespace Foo
@@ -95,7 +95,7 @@ The resize function is very easy and simple to understand, you just set two para
 ### Example
 
 ```c#
-using EasyImage;
+using O7.EasyImage;
 using System.Drawing;
 
 namespace Foo
@@ -126,7 +126,7 @@ The formula to check the proportional width is:
 ### Example
 
 ```c#
-using EasyImage;
+using O7.EasyImage;
 using System.Drawing;
 
 namespace Foo
@@ -157,7 +157,7 @@ The formula to check the proportional height is:
 ### Example
 
 ```c#
-using EasyImage;
+using O7.EasyImage;
 using System.Drawing;
 
 namespace Foo
@@ -183,7 +183,7 @@ If you want to use the easy image library you need to know some things.
 4. If you want to save the image, just call this:
 
 ```c#
-using EasyImage;
+using O7.EasyImage;
 using System.Drawing;
 
 namespace Foo
