@@ -11,6 +11,31 @@ You will have 4 functions, Crop, Resize, HeightResize and WidthResize.
 
 All functions are a extension of Image class.
 
+## Download Package
+
+This is very simple, you just need download the package from nuget:
+
+###  Command Line
+
+* Dotnet CLI    : `dotnet add package O7.EasyImage`
+* Visual Studio : `Install-Package O7.EasyImage`
+
+### Adding reference in .csproj file
+
+The first step that you will need to do is implement the following code in your .csproj file:
+
+```xml
+<ItemGroup>
+  <PackageReference Include="O7.EasyImage" Version="THE_VERSION_HERE" />
+</ItemGroup>
+```
+
+After that, you will execute the following command to restore the package from the nuget using Dotnet CLI:
+
+`dotnet restore`
+
+If you are in Visual Studio, just build the project and the IDE will do the magic!
+
 ## Crop
 
 The Crop function will cut a piece of an image and resize it. The crop is based in four coordinates(x1, x2 and y1, y2):
