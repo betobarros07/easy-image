@@ -1,17 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFramework>netstandard1.5</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>07.EasyImage</RootNamespace>
     <PackageId>O7.EasyImage</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageVersion>2.0.0</PackageVersion>
     <Authors>betobarros07</Authors>
     <Description>Easy Image is a library that provides, basically, functions to resize and crop images.You will have 4 functions, Crop, Resize, HeightResize and WidthResize.All functions are a extension of Image class.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>First release for .Net Standard pack</PackageReleaseNotes>
-    <Copyright>Copyright 2017 (c)</Copyright>
+    <PackageReleaseNotes>Update .net standard 1.5 to .net 6</PackageReleaseNotes>
+    <Copyright>Copyright 2022 (c)</Copyright>
     <PackageTags>Image Crop Resize DrawingCore ImageCore</PackageTags>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" />
     <PackageReference Include="runtime.linux-x64.CoreCompat.System.Drawing" Version="1.0.0-beta009" />
   </ItemGroup>
+
 </Project>
